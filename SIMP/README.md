@@ -11,7 +11,7 @@ modified_by:
 title: 'SIMP Install on Linode'
 contributor:
   name: Michael Brown
-  link: 
+  link: https://www.linkedin.com/in/michael-brown-8a2a3137/
 external_resources:
   - '[Link Title 1](http://www.example.com)'
   - '[Link Title 2](http://www.example.net)'
