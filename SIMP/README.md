@@ -68,7 +68,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 
     yum update
 
-## Installing Simp from a Repo
+## Installing SIMP from a Repo
 There are many ways that we can install SIMP but we are going to install it via a repository. 
 
 ### Enable EPEL Repository
@@ -77,5 +77,36 @@ There are many ways that we can install SIMP but we are going to install it via 
 
     yum install epel-release
     
-    yum install pygpgme yum-utils
+    yum install yum install pygpgme yum-utils
+    
+ ### Add SIMP repo
+1. Add the simp-project.repo file   
+      ```
+    [simp-project_6_X]
+    name=simp-project_6_X
+    baseurl=https://packagecloud.io/simp-project/6_X/el/$releasever/$basearch
+    gpgcheck=1
+    enabled=1
+    gpgkey=https://raw.githubusercontent.com/NationalSecurityAgency/SIMP/master/GPGKEYS/RPM-GPG-KEY-SIMP
+           https://download.simp-project.com/simp/GPGKEYS/RPM-GPG-KEY-SIMP-6
+    sslverify=1
+    sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+    metadata_expire=300
 
+    [simp-project_6_X_dependencies]
+    name=simp-project_6_X_dependencies
+    baseurl=https://packagecloud.io/simp-project/6_X_Dependencies/el/$releasever/$basearch
+    gpgcheck=1
+    enabled=1
+    gpgkey=https://raw.githubusercontent.com/NationalSecurityAgency/SIMP/master/GPGKEYS/RPM-GPG-KEY-SIMP
+           https://download.simp-project.com/simp/GPGKEYS/RPM-GPG-KEY-SIMP-6
+           https://yum.puppet.com/RPM-GPG-KEY-puppetlabs
+           https://yum.puppet.com/RPM-GPG-KEY-puppet
+           https://apt.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-96
+           https://artifacts.elastic.co/GPG-KEY-elasticsearch
+           https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+           https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-$releasever
+    sslverify=1
+    sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+    metadata_expire=300
+    ```
