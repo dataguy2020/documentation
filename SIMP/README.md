@@ -56,6 +56,7 @@ This guide is written for a non-root user. Commands that require elevated privil
 1.  Ensure that you have followed the [Getting Started](/docs/getting-started/) and [Securing Your Server](/docs/security/securing-your-server/) guides, and the Linode's [hostname is set](/docs/getting-started/#setting-the-hostname).
 2. Make you have your hostname changed to what you want it to be for the duration of your use of SIMP. Changing DNS is not complex but is alot of administrative work.
 
+      ```
       Edit /etc/hosts to have the correct hostname for the internal IP Address
       
       Edit /etc/hostname to have the correct hostname
@@ -63,10 +64,13 @@ This guide is written for a non-root user. Commands that require elevated privil
       Edit /etc/sysconfig/network if it all ready has your hostname and change it
       
       Run hostnamectl set-hostname #newHostName
+      ```
   
 3. Update the server
 
+    ```
     yum update
+    ```
 
 ## Installing SIMP from a Repo
 There are many ways that we can install SIMP but we are going to install it via a repository. 
@@ -75,12 +79,14 @@ There are many ways that we can install SIMP but we are going to install it via 
 
 1. Install epel-release, pygpgme and yum-utils
 
+    ```
     yum install epel-release
     
     yum install yum install pygpgme yum-utils
+    ```
     
  ### Add SIMP repo
-1. Add the simp-project.repo file   
+1. Add the simp-project.repo file in /etc/yum.repos.d
       ```
     [simp-project_6_X]
     name=simp-project_6_X
@@ -110,3 +116,4 @@ There are many ways that we can install SIMP but we are going to install it via 
     sslcacert=/etc/pki/tls/certs/ca-bundle.crt
     metadata_expire=300
     ```
+2. Update the $releaseserver variable to be 7 for RHEL7/CentOS7 or 6 for RHEL6/CentOS6. The whitespace and the alignment shown before the additional gpgkey values must be preserved.
