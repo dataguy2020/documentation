@@ -67,3 +67,15 @@ This guide is written for a non-root user. Commands that require elevated privil
 3. Update the server
 
     yum update
+
+## Installing Simp from a Repo
+There are many ways that we can install SIMP but we are going to install it via a repository. 
+
+### Enable EPEL Repository
+
+1. Install epel-release, pygpgme and yum-utils
+
+    yum install epel-release
+    
+    yum install pygpgme yum-utils
+
