@@ -44,3 +44,25 @@ Audit privileged and invalid user activity by actively collection critical secur
 * Unauthorized Service Prevention
 
 Authorize the services that you want to run either system wide or selectively by host. Disable and report on services that have been enabled without authorization.
+
+Further information can be found on the SIMP website; [here](https://www.simp-project.com/). 
+
+
+{{< note >}}
+This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/docs/tools-reference/linux-users-and-groups/) guide. Make your linode at a minimum the 4GB Shared.
+{{< /note >}}
+
+## Before You Begin
+1.  Ensure that you have followed the [Getting Started](/docs/getting-started/) and [Securing Your Server](/docs/security/securing-your-server/) guides, and the Linode's [hostname is set](/docs/getting-started/#setting-the-hostname).
+2. Make you have your hostname changed to what you want it to be for the duration of your use of SIMP. Changing DNS is not complex but is alot of administrative work.
+
+  Edit /etc/hosts to have the correct hostname for the internal IP Address
+  
+  Edit /etc/hostname to have the correct hostname
+  
+  Edit /etc/sysconfig/network if it all ready has your hostname and change it
+  
+  Run hostnamectl set-hostname #newHostName
+  
+3. Update the server
+ - yum update
