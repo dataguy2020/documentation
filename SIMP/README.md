@@ -16,3 +16,6 @@ external_resources:
   - '[Link Title 1](http://www.example.com)'
   - '[Link Title 2](http://www.example.net)'
 ---
+SIMP is an Open Source, fully automated, and extensively tested framework that can either enhance your existing infrastructure or allow you to quickly build one from scratch. Built on the mature Puppet product suite, SIMP is designed around scalability, flexibility, and compliance. 
+
+Initially designed as a turn-key solution for isolated environments, SIMP includes everything you need to get started building repeatable infrastructures at any scale.
