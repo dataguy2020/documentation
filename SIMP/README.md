@@ -52,7 +52,7 @@ Further information can be found on the SIMP website; [here](https://www.simp-pr
 This guide is written for a non-root user. Commands that require elevated privileges are prefixed with `sudo`. If you're not familiar with the `sudo` command, you can check our [Users and Groups](/docs/tools-reference/linux-users-and-groups/) guide. Make your linode at a minimum the 4GB Shared.
 {{< /note >}}
 
-## Before You Begin
+# Before You Begin
 1.  Ensure that you have followed the [Getting Started](/docs/getting-started/) and [Securing Your Server](/docs/security/securing-your-server/) guides, and the Linode's [hostname is set](/docs/getting-started/#setting-the-hostname).
 2. Make you have your hostname changed to what you want it to be for the duration of your use of SIMP. Changing DNS is not complex but is alot of administrative work.
 
@@ -72,10 +72,10 @@ This guide is written for a non-root user. Commands that require elevated privil
     yum update
     ```
 
-## Installing SIMP from a Repo
+# Installing SIMP from a Repo
 There are many ways that we can install SIMP but we are going to install it via a repository. 
 
-### Enable EPEL Repository
+## Enable EPEL Repository
 
 1. Install epel-release, pygpgme and yum-utils
 
@@ -85,7 +85,7 @@ There are many ways that we can install SIMP but we are going to install it via 
     yum install yum install pygpgme yum-utils
     ```
     
- ### Add SIMP repo
+ ## Add SIMP repo
 1. Add the simp-project.repo file in /etc/yum.repos.d
       ```
     [simp-project_6_X]
@@ -120,13 +120,13 @@ There are many ways that we can install SIMP but we are going to install it via 
     
 2. Update the $releaseserver variable to be 7 for RHEL7/CentOS7 or 6 for RHEL6/CentOS6. The whitespace and the alignment shown before the additional gpgkey values must be preserved.
 
-### Rebuild the Yum Cache
+## Rebuild the Yum Cache
 1. Update the yum cache so that it includes the new repository that we just created
     ```
     yum makecache
     ```
 
-### Install the SIMP Server
+## Install the SIMP Server
 1. Select tthe simp-adpater package appropriate for the version of puppet you will be using
     - simp-adapter-foss = FOSS Puppet
     - simp-adapter-pe = Enterprise Puppet
@@ -146,4 +146,4 @@ There are many ways that we can install SIMP but we are going to install it via 
 yum install simp-extras*
 ```
 
-
+# Initial SIMP Server Configuration
