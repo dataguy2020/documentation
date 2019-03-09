@@ -510,3 +510,79 @@ openssl passwd -1
 
 This will allow you to pick the password of your choosing. You can ignore the pam access rule for postgres and sonar. Those can be removed from your manifest file.
 
+4. You can create the necessary host file or you can add it to the default.yaml file. I suggest you putting in the default so all servers have the same local admin account. Run the following commands
+
+```
+cd /etc/puppetlabs/code/environments/production/data
+vim default.yaml
+```
+
+In that file add the following
+
+```
+classes:
+- 'sys_users'
+```
+
+Now we can remove the bootstrap lock file
+
+```
+rm /root/.simp/simp_bootstrap_start_lock
+```
+##SIMP Bootstrap
+Since we now have the configuration completed for the SIMP server we can run bootstrap
+
+1. Run the following command
+
+```
+simp bootstrap
+```
+
+The output from the command should look like something like this:
+
+```
+[root@simp data]# simp bootstrap
+=== Starting SIMP Bootstrap ===
+> The log can be found at '/root/.simp/simp_bootstrap.log.20190309T020606'
+> Successfully disabled non-bootstrap puppet agent
+> Interrupts will be captured and ignored to ensure bootstrap integrity.
+> Killing connection to puppetdb
+> Killing all remaining puppet processes
+> Successfully removed /var/run/puppetlabs/puppetserver/*
+> Existing puppetserver certificates have been found in
+>     /etc/puppetlabs/puppet/ssl
+> If this server has no registered agents, those certificates can be safely removed.
+> Otherwise, although removing them will ensure consistency, manual
+> steps may be required to ensure connectivity with existing Puppet clients.
+> (See https://docs.puppet.com/puppet/latest/ssl_regenerate_certificates.html)
+> Regardless, if removed, new puppetserver certificates will be generated
+> automatically.
+> Do you wish to remove existing puppetserver certificates? (yes|no) yes
+> Successfully removed /etc/puppetlabs/puppet/ssl/*
+> Validating site puppet code
+> Configuring the puppetserver to listen on port 8150
+> Successfully backed up /etc/puppetlabs/puppetserver/conf.d/webserver.conf to /root/.simp/simp_bootstrap.backup.20190309T020606/etc/puppetlabs/puppetserver/conf.d
+> Successfully backed up /etc/sysconfig/puppetserver to /root/.simp/simp_bootstrap.backup.20190309T020606/etc/sysconfig
+> Successfully backed up /etc/puppetlabs/puppet/auth.conf to /root/.simp/simp_bootstrap.backup.20190309T020606/etc/puppetlabs/puppet
+> Removed /etc/puppetlabs/puppet/auth.conf
+> Successfully configured /etc/sysconfig/puppetserver to use a temporary cache
+> Successfully configured /etc/puppetlabs/puppetserver/conf.d/webserver.conf with bootstrap settings
+Service not running so cannot be reloaded
+> Running puppet agent, with --tags pupmod,simp
+> Waiting for puppetserver to accept connections on port 8150
+> Track => ######################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+> Relabeling filesystem for selinux (this may take a while...)
+> Running puppet without tags
+> Waiting for puppetserver to accept connections on port 8140
+> Track => ###############################################
+> Waiting for puppetserver to accept connections on port 8140
+> Track => #############
+=== SIMP Bootstrap Finished! ===
+> Duration of complete bootstrap: 657.188488761 seconds
+> /root/.simp/simp_bootstrap.log.20190309T020606 contains details of the bootstrap actions performed.
+> Prior to operation, you must reboot your system.
+> Run `puppet agent -t` after reboot to complete the bootstrap process.
+> It may take a few minutes before the puppetserver accepts agent
+> connections after boot.
+```
+
