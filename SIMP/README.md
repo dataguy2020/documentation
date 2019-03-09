@@ -585,4 +585,26 @@ Service not running so cannot be reloaded
 > It may take a few minutes before the puppetserver accepts agent
 > connections after boot.
 ```
+{{< note >}}
+If progress bars are of equal length and the bootstrap finishes quickly, a problem has occurred. This is most likely due to an error in SIMP configuration. Refer to the previous step and make sure that all configuration options are correct.
+
+If this happens, you can debug by either looking at the log files or by running 
+
+```
+puppet agent -t --masterport=8150
+```
+{{< /note >}}
+
+2. Type the following command allow the server to reboot. Remember when it comes back we will have to run puppet
+
+```
+reboot
+```
+
+3. When the server comes back you will have to log in as the local_admin account and then run the following command to become root
+
+```
+sudo su - root
+```
+
 
