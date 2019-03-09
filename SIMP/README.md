@@ -636,3 +636,22 @@ svckill::ignore:
 - 'rhel-domainname'
 ```
 
+Save the file and exit it. Then run puppet
+
+```
+puppet agent -t
+```
+
+Your output then should be something like this
+
+```
+[root@simp data]# puppet agent -t
+Info: Using configured environment 'production'
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Retrieving locales
+Info: Loading facts
+Info: Caching catalog for simp.mikesdevhub.com
+Info: Applying configuration version '1552105032'
+Notice: Applied catalog in 19.87 seconds
+```
