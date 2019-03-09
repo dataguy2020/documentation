@@ -130,3 +130,13 @@ There are many ways that we can install SIMP but we are going to install it via 
 1. Selec tthe simp-adpater package appropriate for the version of puppet you will be using
     - simp-adapter-foss = FOSS Puppet
     - simp-adapter-pe = Enterprise Puppet
+
+2. We will be using the foss adapter package
+  ```
+  yum install simp-adapter-foss`
+  ```
+
+3. Install the remaining SIMP Packages
+  ```
+  yum install simp
+  ```
