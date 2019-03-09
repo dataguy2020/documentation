@@ -120,13 +120,13 @@ There are many ways that we can install SIMP but we are going to install it via 
     
 2. Update the $releaseserver variable to be 7 for RHEL7/CentOS7 or 6 for RHEL6/CentOS6. The whitespace and the alignment shown before the additional gpgkey values must be preserved.
 
-###Rebuild the Yum Cache
+### Rebuild the Yum Cache
 1. Update the yum cache so that it includes the new repository that we just created
     ```
     yum makecache
     ```
 
-###Install the SIMP Server
+### Install the SIMP Server
 1. Select tthe simp-adpater package appropriate for the version of puppet you will be using
     - simp-adapter-foss = FOSS Puppet
     - simp-adapter-pe = Enterprise Puppet
