@@ -127,7 +127,7 @@ There are many ways that we can install SIMP but we are going to install it via 
     ```
 
 ###Install the SIMP Server
-1. Selec tthe simp-adpater package appropriate for the version of puppet you will be using
+1. Select tthe simp-adpater package appropriate for the version of puppet you will be using
     - simp-adapter-foss = FOSS Puppet
     - simp-adapter-pe = Enterprise Puppet
 
@@ -135,8 +135,13 @@ There are many ways that we can install SIMP but we are going to install it via 
   ```
   yum install simp-adapter-foss`
   ```
+  - You will get an error saying the certificates are not in the proper files. You can ignore this error at this time
 
 3. Install the remaining SIMP Packages
   ```
   yum install simp
   ```
+4. Install all available pupmods
+```
+yum install pupmod-*
+```
