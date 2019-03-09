@@ -141,7 +141,9 @@ There are many ways that we can install SIMP but we are going to install it via 
   ```
   yum install simp
   ```
-4. Install all available pupmods
+4. Install all simp-extras
 ```
-yum install pupmod-*
+yum install simp-extras*
 ```
+
+
