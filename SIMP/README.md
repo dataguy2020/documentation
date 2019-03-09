@@ -116,6 +116,8 @@ There are many ways that we can install SIMP but we are going to install it via 
     sslcacert=/etc/pki/tls/certs/ca-bundle.crt
     metadata_expire=300
     ```
+    
+    
 2. Update the $releaseserver variable to be 7 for RHEL7/CentOS7 or 6 for RHEL6/CentOS6. The whitespace and the alignment shown before the additional gpgkey values must be preserved.
 
 ###Rebuild the Yum Cache
@@ -123,3 +125,8 @@ There are many ways that we can install SIMP but we are going to install it via 
     ```
     yum makecache
     ```
+
+###Install the SIMP Server
+1. Selec tthe simp-adpater package appropriate for the version of puppet you will be using
+    - simp-adapter-foss = FOSS Puppet
+    - simp-adapter-pe = Enterprise Puppet
