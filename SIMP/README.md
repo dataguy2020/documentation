@@ -607,4 +607,32 @@ reboot
 sudo su - root
 ```
 
+4. When we run puppet we get the following output
+
+```
+[root@simp ~]# puppet agent -t
+Info: Using configured environment 'production'
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+Info: Retrieving locales
+Info: Loading facts
+Info: Caching catalog for simp.mikesdevhub.com
+Info: Applying configuration version '1552101712'
+Warning: svckill: Would have killed:
+  svckill: rhel-domainname.service
+Notice: Applied catalog in 17.40 seconds
+```
+
+5. The service rhel-domainname we will have to update in our puppetry. Run the following commands
+```
+cd /etc/puppetlabs/code/environments/production/data
+vim default.yaml
+```
+
+Add the following code to the bottom of the file
+
+```
+svckill::ignore:
+- 'rhel-domainname'
+```
 
