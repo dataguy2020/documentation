@@ -1,2 +1,2 @@
 # documentation
-Mike's Documentation
+Documentation created by Michael Brown
