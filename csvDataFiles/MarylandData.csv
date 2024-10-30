@@ -1,4 +1,4 @@
-id,state,county,testRate
+id,state,county,rate
 24001,Maryland,Allegany County,10.0
 24003,Maryland,Anne Arundel County,5
 24005,Maryland,Baltimore County,4.7
