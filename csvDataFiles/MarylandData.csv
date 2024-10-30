@@ -1,6 +1,6 @@
 id,state,county,rate
-24001,Maryland,Allegany County,6.4
-24003,Maryland,Anne Arundel County,4
+24001,Maryland,Allegany County,10.0
+24003,Maryland,Anne Arundel County,5
 24005,Maryland,Baltimore County,4.7
 24009,Maryland,Calvert County,4.1
 24011,Maryland,Caroline County,4.8
@@ -14,7 +14,7 @@ id,state,county,rate
 24027,Maryland,Howard County,3.4
 24029,Maryland,Kent County,4.7
 24031,Maryland,Montgomery County,3.4
-24033,Maryland,Prince George's County,4.6
+24033,Maryland,Prince George's County,1.0
 24035,Maryland,Queen Anne's County,3.8
 24037,Maryland,St. Mary's County,4.5
 24039,Maryland,Somerset County,6.5
